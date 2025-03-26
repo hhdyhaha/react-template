@@ -1,28 +1,112 @@
-# React + TypeScript + Vite
+# React 项目模板
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+这是一个基于 React 18 + TypeScript + Vite 构建的现代 React 应用模板。该模板提供了完善的项目结构和最新的技术栈配置，帮助你快速开始 React 应用开发。
 
-Currently, two official plugins are available:
+## 技术栈
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 18.2.0
+- TypeScript
+- Vite 5
+- ESLint 9
 
-## Expanding the ESLint configuration
+## 开发环境设置
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 前置要求
+
+- Node.js (推荐 v18+)
+- PNPM (推荐，也可以使用 npm 或 yarn)
+
+### 安装依赖
+
+```bash
+pnpm install
+```
+
+### 开发服务器
+
+启动开发服务器，支持热模块替换 (HMR)：
+
+```bash
+pnpm dev
+```
+
+### 构建项目
+
+构建生产环境代码：
+
+```bash
+pnpm build
+```
+
+### 代码检查
+
+运行 ESLint 代码检查：
+
+```bash
+pnpm lint
+```
+
+### 预览构建结果
+
+预览构建后的生产环境代码：
+
+```bash
+pnpm preview
+```
+
+## 项目结构
+
+本项目采用功能模块化的目录结构，便于维护和扩展：
+
+```
+src/
+├── api/                # API调用相关函数
+│   ├── endpoints/      # 按功能分类的API端点
+│   └── services/       # API服务
+├── assets/             # 静态资源
+│   ├── images/         # 图片
+│   ├── fonts/          # 字体
+│   └── icons/          # 图标
+├── components/         # 可复用组件
+│   ├── common/         # 通用组件（按钮、输入框等）
+│   ├── layout/         # 布局组件
+│   └── feature/        # 特定功能组件
+├── constants/          # 常量定义
+├── contexts/           # React上下文
+├── hooks/              # 自定义hooks
+├── locales/            # 国际化文件
+├── pages/              # 页面组件
+│   ├── Home/
+│   ├── Login/
+│   └── Dashboard/
+├── routes/             # 路由配置
+├── store/              # 状态管理
+│   └── slices/         # Redux切片或其他状态模块
+├── styles/             # 全局样式和主题
+│   ├── global/
+│   └── themes/
+├── types/              # TypeScript类型定义
+├── utils/              # 工具函数
+├── App.tsx             # 应用根组件
+└── main.tsx            # 应用入口
+```
+
+## ESLint 配置
+
+本项目使用了 ESLint 的最新配置方式。如果需要开发生产级应用，推荐启用类型检查的 lint 规则：
 
 ```js
 export default tseslint.config({
   extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
+    // 移除 ...tseslint.configs.recommended 并替换为以下配置
     ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
+    // 或者使用更严格的规则
     ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
+    // 可选：添加样式规则
     ...tseslint.configs.stylisticTypeChecked,
   ],
   languageOptions: {
-    // other options...
+    // 其他选项...
     parserOptions: {
       project: ['./tsconfig.node.json', './tsconfig.app.json'],
       tsconfigRootDir: import.meta.dirname,
@@ -31,24 +115,6 @@ export default tseslint.config({
 })
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 许可证
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+MIT
