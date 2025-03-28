@@ -1,13 +1,16 @@
 # React 项目模板
 
-这是一个基于 React 18 + TypeScript + Vite 构建的现代 React 应用模板。该模板提供了完善的项目结构和最新的技术栈配置，帮助你快速开始 React 应用开发。
+这是一个基于 React 18 + TypeScript + Vite + Ant Design + TailwindCSS 构建的现代 React 应用模板。该模板提供了完善的项目结构和最新的技术栈配置，帮助你快速开始 React 应用开发。
 
 ## 技术栈
 
 - React 18.2.0
-- TypeScript
-- Vite 5
-- ESLint 9
+- TypeScript 5.3.3
+- Vite 5.1.4
+- ESLint 9.21.0
+- Ant Design 5.24.5
+- TailwindCSS 4.0.17
+- PostCSS 8.5.3
 
 ## 开发环境设置
 
