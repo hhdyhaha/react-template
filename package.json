@@ -10,7 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/postcss-pxtorem": "^6.1.0",
     "antd": "^5.24.5",
+    "postcss": "^8.5.3",
+    "postcss-pxtorem": "^6.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
