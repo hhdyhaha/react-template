@@ -22,7 +22,7 @@ function App() {
           count is {count}
         </Button>
       </div>
-      <div className='testRem'>
+      <div className='bg-amber-100'>
         haha
       </div>
     </>
