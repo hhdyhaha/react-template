@@ -33,23 +33,23 @@ const MainLayout: React.FC = () => {
 
   return (
     <Layout className="app-layout">
-      <Header style={{ display: 'flex', alignItems: 'center' }}>
-        <div className="logo" style={{ width: 120, height: 31, margin: '16px 24px 16px 0', background: 'rgba(255, 255, 255, 0.2)' }} />
+      <Header className="flex items-center !bg-white">
+        <div className="logo w-[120px] h-[31px] mr-6 my-4 bg-gray-300" />
         <Menu
-          theme="dark"
+          theme="light"
           mode="horizontal"
           selectedKeys={[current]}
           items={menuItems}
           onClick={handleMenuClick}
-          style={{ flex: 1, minWidth: 0 }}
+          className="flex-1 min-w-0"
         />
       </Header>
-      <Content style={{ padding: '0 50px', marginTop: 64 }}>
-        <div style={{ background: '#fff', padding: 24, minHeight: 380 }}>
+      <Content className="px-[50px] mt-2">
+        <div className="bg-white p-6 min-h-[380px]">
           <Outlet />
         </div>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>
+      <Footer className="text-center">
         React Template ©{new Date().getFullYear()} Created with Vite
       </Footer>
     </Layout>
