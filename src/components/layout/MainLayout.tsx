@@ -1,8 +1,8 @@
 import { Layout } from 'antd'
 import React from 'react'
-import HeaderPage from './HeaderPage'
-import ContentPage from './ContentPage'
-import FooterPage from './FooterPage'
+import HeaderPage from '@/components/layout/HeaderPage'
+import ContentPage from '@/components/layout/ContentPage'
+import FooterPage from '@/components/layout/FooterPage'
 
 const MainLayout: React.FC = () => {
   return (

@@ -1,12 +1,12 @@
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
-import App from '../App';
-import MainLayout from '../components/layout/MainLayout';
+import App from '@/App';
+import MainLayout from '@/components/layout/MainLayout';
 
 // 懒加载页面组件
-const Home = lazy(() => import('../pages/Home/index'));
-const Login = lazy(() => import('../pages/Login/index'));
-const Dashboard = lazy(() => import('../pages/Dashboard/index'));
+const Home = lazy(() => import('@/pages/Home/index'));
+const Login = lazy(() => import('@/pages/Login/index'));
+const Dashboard = lazy(() => import('@/pages/Dashboard/index'));
 
 // 加载组件
 const LazyLoad = (Component: React.LazyExoticComponent<React.ComponentType<any>>) => (
