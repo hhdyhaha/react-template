@@ -32,7 +32,7 @@ const MainLayout: React.FC = () => {
   };
 
   return (
-    <Layout className="app-layout">
+    <Layout className="app-layout flex flex-col !min-h-screen">
       <Header className="flex items-center !bg-white">
         <div className="logo w-[120px] h-[31px] mr-6 my-4 bg-gray-300" />
         <Menu
@@ -44,7 +44,7 @@ const MainLayout: React.FC = () => {
           className="flex-1 min-w-0"
         />
       </Header>
-      <Content className="px-[50px] mt-2">
+      <Content className="px-[50px] mt-2 flex-1">
         <div className="bg-white p-6 min-h-[380px]">
           <Outlet />
         </div>
