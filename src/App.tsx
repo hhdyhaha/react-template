@@ -1,32 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { Button } from 'antd'
-function App() {
-  const [count, setCount] = useState(0)
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import './App.css';
 
+/**
+ * App组件只负责渲染路由
+ */
+function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <Button type="primary" onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </Button>
-      </div>
-      <div className='bg-amber-100'>
-        haha
-      </div>
-    </>
-  )
+    <Outlet />
+  );
 }
 
-export default App
+export default App;
