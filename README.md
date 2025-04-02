@@ -11,6 +11,9 @@
 - Ant Design 5.24.5
 - TailwindCSS 4.0.17
 - PostCSS 8.5.3
+- Axios 1.8.4
+- React Router DOM 6.22.0
+- Zustand 5.0.3
 
 ## 开发环境设置
 
@@ -64,14 +67,9 @@ pnpm preview
 ```
 src/
 ├── api/                # API调用相关函数
-│   ├── endpoints/      # 按功能分类的API端点
-│   └── services/       # API服务
-├── assets/             # 静态资源
-│   ├── images/         # 图片
-│   ├── fonts/          # 字体
-│   └── icons/          # 图标
+├── assets/             # 静态资源（图片、字体、图标等）
 ├── components/         # 可复用组件
-│   ├── common/         # 通用组件（按钮、输入框等）
+│   ├── common/         # 通用组件
 │   ├── layout/         # 布局组件
 │   └── feature/        # 特定功能组件
 ├── constants/          # 常量定义
@@ -83,16 +81,29 @@ src/
 │   ├── Login/
 │   └── Dashboard/
 ├── routes/             # 路由配置
-├── store/              # 状态管理
-│   └── slices/         # Redux切片或其他状态模块
+├── store/              # 状态管理 (Zustand)
 ├── styles/             # 全局样式和主题
-│   ├── global/
-│   └── themes/
 ├── types/              # TypeScript类型定义
 ├── utils/              # 工具函数
 ├── App.tsx             # 应用根组件
+├── index.css           # 全局样式
 └── main.tsx            # 应用入口
 ```
+
+## 项目特性
+
+- 基于 React 18 的最新特性
+- TypeScript 类型支持
+- Vite 快速开发和构建
+- Ant Design 组件库
+- TailwindCSS 工具类支持
+- 响应式设计 (使用 postcss-pxtorem)
+- 路由管理 (React Router v6)
+- 状态管理 (Zustand)
+- API 请求封装 (Axios)
+- 目录别名 (@ 指向 src 目录)
+- 开发环境代理配置
+- ESLint 代码规范
 
 ## ESLint 配置
 
