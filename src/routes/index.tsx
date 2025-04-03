@@ -7,6 +7,7 @@ import MainLayout from '@/components/layout/MainLayout';
 const Home = lazy(() => import('@/pages/Home/index'));
 const Login = lazy(() => import('@/pages/Login/index'));
 const Dashboard = lazy(() => import('@/pages/Dashboard/index'));
+const NotFound = lazy(() => import('@/pages/NotFound/index'));
 
 // 加载组件
 const LazyLoad = (Component: React.LazyExoticComponent<React.ComponentType<any>>) => (
@@ -35,6 +36,10 @@ const routes: RouteObject[] = [
           {
             path: 'dashboard',
             element: LazyLoad(Dashboard),
+          },
+          {
+            path: '*',
+            element: LazyLoad(NotFound),
           },
         ],
       },
