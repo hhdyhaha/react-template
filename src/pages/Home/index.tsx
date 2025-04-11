@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // 如果使用Zustand，需要导入store
 import { useLoadingStore } from '@/store/loading';
 
 const Home: React.FC = () => {
-  // 添加loading状态 - Zustand方式
-  useLoadingStore.getState().setLoading(true);
+  useEffect(() => {
+    useLoadingStore.getState().setLoading(true);
+    // 这里可以添加数据获取逻辑
+    // 数据获取完成后设置 loading 为 false
+    return () => {
+      useLoadingStore.getState().setLoading(false);
+    };
+  }, []);
+
   return (
     <div className="home-container">
       <h1>首页</h1>

@@ -1,8 +1,14 @@
 import React from 'react';
 import { Button, Form, Input } from 'antd';
 
+interface LoginFormValues {
+  username: string;
+  password: string;
+  remember?: boolean;
+}
+
 const Login: React.FC = () => {
-  const onFinish = (values: any) => {
+  const onFinish = (values: LoginFormValues) => {
     console.log('登录信息:', values);
   };
 

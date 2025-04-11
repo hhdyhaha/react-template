@@ -1,20 +1,14 @@
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
-import { lazy, Suspense } from 'react';
+import { lazy } from 'react';
 import App from '@/App';
 import MainLayout from '@/components/layout/MainLayout';
+import LazyLoad from '@/components/LazyLoad';
 
 // 懒加载页面组件
 const Home = lazy(() => import('@/pages/Home/index'));
 const Login = lazy(() => import('@/pages/Login/index'));
 const Dashboard = lazy(() => import('@/pages/Dashboard/index'));
 const NotFound = lazy(() => import('@/pages/NotFound/index'));
-
-// 加载组件
-const LazyLoad = (Component: React.LazyExoticComponent<React.ComponentType<any>>) => (
-  <Suspense fallback={<div>加载中...</div>}>
-    <Component />
-  </Suspense>
-);
 
 // 路由配置
 const routes: RouteObject[] = [
@@ -27,19 +21,19 @@ const routes: RouteObject[] = [
         children: [
           {
             index: true,
-            element: LazyLoad(Home),
+            element: <LazyLoad Component={Home} />,
           },
           {
             path: 'login',
-            element: LazyLoad(Login),
+            element: <LazyLoad Component={Login} />,
           },
           {
             path: 'dashboard',
-            element: LazyLoad(Dashboard),
+            element: <LazyLoad Component={Dashboard} />,
           },
           {
             path: '*',
-            element: LazyLoad(NotFound),
+            element: <LazyLoad Component={NotFound} />,
           },
         ],
       },
