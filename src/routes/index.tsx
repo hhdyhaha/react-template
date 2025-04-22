@@ -42,6 +42,8 @@ const routes: RouteObject[] = [
 ];
 
 // 创建路由器
-const router = createBrowserRouter(routes);
+const router = createBrowserRouter(routes, {
+  basename: '/index'
+});
 
 export default router; 
